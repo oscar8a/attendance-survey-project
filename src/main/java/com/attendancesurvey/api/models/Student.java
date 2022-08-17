@@ -10,5 +10,9 @@ import javax.persistence.*;
 @Setter
 @Table(name = "STUDENTS")
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String name;
 }

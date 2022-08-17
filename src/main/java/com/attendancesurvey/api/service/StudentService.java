@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -18,5 +20,9 @@ public class StudentService {
 
     public Student createUser(StudentCreateDTO studentData){
         return studentRepository.save(mapper.map(studentData, Student.class));
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 }
