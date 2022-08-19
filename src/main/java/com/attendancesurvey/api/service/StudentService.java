@@ -31,8 +31,9 @@ public class StudentService {
     @Autowired
     private ModelMapper mapper;
 
-    public Student createUser(StudentCreateDTO studentData){
-        return studentRepository.save(mapper.map(studentData, Student.class));
+    public StudentCreateDTO createStudent(StudentCreateDTO studentData){
+        Student resultStudent = studentRepository.save(mapper.map(studentData, Student.class));
+        return mapper.map(resultStudent, StudentCreateDTO.class);
     }
 
     public Attendance createAttendance(AttendanceCreateDTO attendanceData, Integer studentId) {
