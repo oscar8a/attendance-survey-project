@@ -20,10 +20,10 @@ public class Course {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
     private Set<Student> students;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany
     private List<Attendance> attendanceList = new ArrayList<>();
 }

@@ -16,7 +16,4 @@ public class Attendance {
 
     private LocalDate attendanceDate;
     private boolean isPresent;
-
-    @ManyToOne(fetch= FetchType.LAZY)
-    private Course course;
 }

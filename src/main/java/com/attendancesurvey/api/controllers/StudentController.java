@@ -28,8 +28,7 @@ public class StudentController {
 
     @PostMapping("/{id}/attendance")
     public Attendance createAttendance(@Valid @RequestBody AttendanceCreateDTO attendanceData, @PathVariable int id) {
-        attendanceData.setAttendanceDate(LocalDate.now());
-        return studentService.createAttendance(attendanceData);
+        return studentService.createAttendance(attendanceData, id);
     }
 
     @GetMapping

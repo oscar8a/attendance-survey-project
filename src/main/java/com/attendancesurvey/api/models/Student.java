@@ -18,7 +18,7 @@ public class Student {
 
     private String name;
 
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(
             name = "STUDENT_ATTENDANCE",
             joinColumns = @JoinColumn(name = "student_id"),
